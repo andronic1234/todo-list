@@ -8,7 +8,8 @@ import {
   Platform,
   KeyboardAvoidingView,
   TextInput,
-  Keyboard
+  Keyboard,
+  ScrollView
 } from 'react-native';
 import Task from './components/Task';
 
@@ -32,7 +33,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <View style={styles.tasksWrapper}>
         <Text style={styles.sectionTitle}>Today's tasks</Text>
-        <View style={styles.items}>
+        <ScrollView style={styles.items}>
           {/*Tasks go here*/}
           {
             taskItems.map((item, index) => {
@@ -43,7 +44,7 @@ export default function App() {
               ) 
             })
           }
-        </View>
+        </ScrollView>
       </View>
       {/*Write tasks*/}
       <KeyboardAvoidingView
